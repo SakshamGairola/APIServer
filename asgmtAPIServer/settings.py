@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'APIServer',
+    'graphene_django',
 ]
 
 # Allow all domains to access this API
@@ -123,3 +124,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings for the graphene-django package, should 'app.schema.schema'
+GRAPHENE = {
+    # 'SCHEMA': 'asgmtAPIServer.schema.schema',
+    'SCHEMA': 'APIServer.schema.schema',
+}
