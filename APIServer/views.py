@@ -12,6 +12,7 @@ def apiendpoint(request):
         banks_serializers = BanksSerializers(banks, many=True)
         return JsonResponse(banks_serializers.data, safe=False)
 
+
 def apiendpointid(request, id=0):
     if request.method == 'GET':
         banks = Banks.objects.filter(id=id)

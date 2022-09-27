@@ -127,6 +127,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # settings for the graphene-django package, should 'app.schema.schema'
 GRAPHENE = {
-    # 'SCHEMA': 'asgmtAPIServer.schema.schema',
     'SCHEMA': 'APIServer.schema.schema',
 }
