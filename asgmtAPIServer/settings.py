@@ -126,6 +126,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # settings for the graphene-django package, should 'app.schema.schema'
-GRAPHENE = {
-    'SCHEMA': 'APIServer.schema.schema',
-}
+# GRAPHENE = {
+#     'SCHEMA': 'APIServer.schema.schema',
+# }

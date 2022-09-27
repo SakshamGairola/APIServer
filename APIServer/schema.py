@@ -1,5 +1,6 @@
 import graphene
 from graphene_django import DjangoObjectType
+from graphene_django import DjangoListField
 
 from APIServer.models import Banks, Branches
 
@@ -17,19 +18,34 @@ class BranchesType(DjangoObjectType):
 
 
 class Query(graphene.ObjectType):
-    banks = graphene.List(BanksTypes)
-    bankFields = graphene.Field(BanksTypes)
+    banksList = graphene.List(BanksTypes)
+    bankFields = graphene.Field(BanksTypes, id=graphene.Int())
 
-    branches = graphene.List(BranchesType)
+    branchesList = graphene.List(BranchesType, id=graphene.Int())
     branchFields = graphene.Field(BranchesType)
 
-    # bank = graphene.Field(Banks, id=id)
+    allBanks = DjangoListField(BanksTypes)
 
-    def resolve_banks(self, info):
+    test = graphene.String()
+
+    # bank = graphene.Field(Banks, id=id)
+    # def resolve_allBanks(self, info):
+    #     return Banks.object.all()
+
+    def resolve_banksList(self, info):
         return Banks.objects.all()
 
-    def resolve_branches(self, info):
-        return Branches.objects.all()
+    def resolve_bankFields(self, info, id):
+        return Banks.objects.get(pk=id)
+
+    def resolve_branchesList(self, info, id):
+        return Branches.objects.filter(bank=id)
+
+    def resolve_branchFields(self, info):
+        return Banks.objects.all
+
+    def resolve_test(self, info):
+        return "Helo"
 
 
 schema = graphene.Schema(query=Query)
