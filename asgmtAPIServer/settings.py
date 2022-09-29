@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'asgmtAPIServer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'indian_banks',
-        'USER': 'postgres',
-        'PASSWORD': 'test',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': os.getenv("DB_ENGINE", 'django.db.backends.postgresql'),
+        'NAME': os.getenv("DB_NAME", 'indian_banks'),
+        'USER': os.getenv("DB_USER", 'postgres'),
+        'PASSWORD': os.getenv("DB_PASSWORD", 'test'),
+        'HOST': os.getenv("DB_HOST", '127.0.0.1'),
+        'PORT': os.getenv("DB_PORT", '5432'),
     }
 }
 
