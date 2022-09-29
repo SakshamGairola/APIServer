@@ -22,7 +22,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('APIServer/', include('APIServer.urls')),
+    path('', include('APIServer.urls')),
     # csrf_exempt will allow posting other API endpoints to gql(graphQL)
     # path("gql/", csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema))),
 ]
