@@ -26,3 +26,9 @@ query {
 
 APIServer.views.py contains the following function:
 `def apiRestEndpoint(request, branch):` takes `branch` as an argument, contains two request methods for `GET` and `POST` requests returns a `JSONResponse`
+
+## How to run the application
+
+1. create a virtual environment using `py -m venv <name-of-virtual-environment>` and activating it through `.\<name-of-virtual-environment>\Scripts\activate`
+2. Then in the root directory of virtual-environment create a directory `asgmtAPIServer` and run git pull to clone the repository on your local machine
+3. To install required dependencies inside `asgmtAPIServer` directory run `pip install -r requirements.txt`
