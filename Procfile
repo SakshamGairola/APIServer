@@ -1,3 +1,1 @@
-web:
-gunicorn
-asgmtAPIServer.wsgi
+web: gunicorn asgmtAPIServer.wsgi
