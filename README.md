@@ -1,6 +1,6 @@
 # REST And GraphQL API Server
 
-The API can be called from here [GraphQL](https://gqlapiserver.herokuapp.com/gql), it is an interactive web based GraphQL query frontend.
+The API can be called from here [GraphQL](https://gqlapiserver.herokuapp.com/gql/), it is an interactive web based GraphQL query frontend.
 
 Methods used
 
